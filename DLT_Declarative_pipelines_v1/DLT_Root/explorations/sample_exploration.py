@@ -17,3 +17,24 @@ sys.path.append("/Workspace/Users/nallaperumal.sathiyan@gmail.com/New Pipeline 2
 # !!! Before performing any data analysis, make sure to run the pipeline to materialize the sample datasets. The tables referenced in this notebook depend on that step.
 
 display(spark.sql("SELECT * FROM dlt_dev.dlt_schema.sample_trips_aug_14_1609"))
+
+# COMMAND ----------
+
+display(spark.sql("SELECT * FROM dlt_dev.source_raw.order_test limit 10"))
+
+# COMMAND ----------
+
+display(spark.sql("SELECT * FROM dlt_dev.source_raw.order_test limit 10"))
+
+# COMMAND ----------
+
+display(spark.sql("SELECT * FROM dlt_dev.dlt_schema.first_materialized_view"))
+
+# COMMAND ----------
+
+display(spark.sql("SELECT * FROM dlt_dev.dlt_schema.first_streaming_table limit 10"))
+
+# COMMAND ----------
+
+df = spark.read.table("dlt_dev.source_raw.order_test")
+display(df)
